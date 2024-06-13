@@ -24,16 +24,16 @@ public class ClienteSrvcImpl implements ClienteSrvc{
 
     @Override
     public Optional<Cliente> porId(Integer id) {
-        return Optional.empty();
+        return Optional.ofNullable(repoCli.porId(id));
     }
 
     @Override
     public void guardar(Cliente cli) {
-
+        repoCli.guardar(cli);
     }
 
     @Override
     public void eliminar(Integer id) {
-
+        repoCli.eliminar(id);
     }
 }

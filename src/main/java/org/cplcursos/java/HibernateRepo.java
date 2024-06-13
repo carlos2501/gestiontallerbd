@@ -16,10 +16,11 @@ public class HibernateRepo {
         // Enviamos este em creado para que lo utilice el repositorio. De esta forma, podemos cerrarlo al finalizar su uso
         Repo<Cliente> repoCli = new ClienteRepoImpl(em);
 
+        /*
         List<Cliente> listaCli = repoCli.listar();
         System.out.println("================ Lista de clientes =====================");
-        System.out.println(listaCli);
-
+        System.out.println();
+        */
         System.out.println("================ Buscar un cliente =====================");
         Cliente cli = repoCli.porId(Integer.valueOf(JOptionPane.showInputDialog("Ingrese el id del cliente a localizar:")));
         if (cli != null) {
