@@ -30,11 +30,32 @@ public class ClienteRepoImpl implements Repo<Cliente> {
 
     @Override
     public void guardar(Cliente cliente) {
-
+        try {
+            em.getTransaction().begin();
+            if (cliente.getId() != null && cliente.getId() > 0) {
+                em.merge(cliente);
+            } else {
+                em.persist(cliente);
+            }
+            em.getTransaction().commit();
+        } catch (Exception e) {
+            em.getTransaction().rollback();
+            e.printStackTrace();
+        }
     }
 
     @Override
     public void eliminar(Integer id) {
-
+        try{
+            em.getTransaction().begin();
+            Cliente cli = porId(id);
+            if (cli != null) {
+                em.remove(cli);
+                em.getTransaction().commit();
+            }
+        } catch (Exception e) {
+            em.getTransaction().rollback();
+            e.printStackTrace();
+        }
     }
 }
