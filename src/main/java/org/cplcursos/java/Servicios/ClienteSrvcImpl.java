@@ -19,8 +19,7 @@ public class ClienteSrvcImpl implements ClienteSrvc{
 
     @Override
     public List<Cliente> listaCli(Integer num) {
-        List<Cliente> lista =  repoCli.listar();
-        return
+        return  repoCli.listar(num);
     }
 
     @Override

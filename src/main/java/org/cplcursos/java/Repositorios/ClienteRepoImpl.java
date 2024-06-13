@@ -19,8 +19,9 @@ public class ClienteRepoImpl implements Repo<Cliente> {
     }
 
     @Override
-    public List<Cliente> listar() {
+    public List<Cliente> listar(Integer num) {
         return em.createQuery("SELECT c FROM Cliente c", Cliente.class)
+                .setMaxResults(num)
                 .getResultList();
     }
 
