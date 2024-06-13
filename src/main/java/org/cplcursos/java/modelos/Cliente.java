@@ -43,7 +43,7 @@ public class Cliente {
 
     @PrePersist
     public void prePersist() {
-        this.creadoEl = LocalDateTime.now();
+        //this.creadoEl = LocalDateTime.now();
         System.out.println("Antes del persist");
     }
 
