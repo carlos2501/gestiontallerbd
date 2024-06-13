@@ -24,7 +24,7 @@ public class Hibernate_ciclo_vida {
         cli.setNombre(nombre);
         cli.setDireccion(dir);
         cli.setEdad(Byte.valueOf(edad));
-        cli.setCreadoEl(LocalDateTime.now()); // se asigna en el @Prepersist de Cliente
+        //cli.setCreadoEl(LocalDateTime.now()); // se asigna en el @Prepersist de Cliente
         clienteSrvc.guardar(cli);
         System.out.println(clienteSrvc.porId(cli.getId()));
 /*

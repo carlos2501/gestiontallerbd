@@ -12,7 +12,7 @@ import java.time.LocalDateTime;
 @Table(name="clientes")
 @Getter
 @Setter
-@NoArgsConstructor
+//@NoArgsConstructor
 @ToString
 public class Cliente {
     @Id
@@ -40,6 +40,10 @@ public class Cliente {
 
     @Column(name="ultimamodificacion")
     private LocalDateTime ultimaModificacion;
+
+    public Cliente() {
+        this.creadoEl = LocalDateTime.now();
+    }
 
     @PrePersist
     public void prePersist() {
