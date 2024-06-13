@@ -20,7 +20,8 @@ public class ClienteRepoImpl implements Repo<Cliente> {
 
     @Override
     public List<Cliente> listar() {
-        return em.createQuery("SELECT c FROM Cliente c", Cliente.class).getResultList();
+        return em.createQuery("SELECT c FROM Cliente c", Cliente.class)
+                .getResultList();
     }
 
     @Override
