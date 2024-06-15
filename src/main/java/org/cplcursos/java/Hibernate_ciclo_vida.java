@@ -3,11 +3,10 @@ package org.cplcursos.java;
 import jakarta.persistence.EntityManager;
 import org.cplcursos.java.Servicios.ClienteSrvc;
 import org.cplcursos.java.Servicios.ClienteSrvcImpl;
-import org.cplcursos.java.modelos.Cliente;
+import org.cplcursos.java.Entidades.Cliente;
 import org.cplcursos.java.util.JpaUtil;
 
 import javax.swing.*;
-import java.time.LocalDateTime;
 
 public class Hibernate_ciclo_vida {
     public static void main(String[] args) {

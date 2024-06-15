@@ -1,6 +1,6 @@
 package org.cplcursos.java.Servicios;
 
-import org.cplcursos.java.modelos.Cliente;
+import org.cplcursos.java.Entidades.Cliente;
 
 import java.util.List;
 import java.util.Optional;

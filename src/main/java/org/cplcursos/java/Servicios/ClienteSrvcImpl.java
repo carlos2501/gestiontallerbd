@@ -3,7 +3,7 @@ package org.cplcursos.java.Servicios;
 import jakarta.persistence.EntityManager;
 import org.cplcursos.java.Repositorios.ClienteRepoImpl;
 import org.cplcursos.java.Repositorios.Repo;
-import org.cplcursos.java.modelos.Cliente;
+import org.cplcursos.java.Entidades.Cliente;
 
 import java.util.List;
 import java.util.Optional;

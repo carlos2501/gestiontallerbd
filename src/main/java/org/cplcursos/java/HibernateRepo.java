@@ -3,11 +3,10 @@ package org.cplcursos.java;
 import jakarta.persistence.EntityManager;
 import org.cplcursos.java.Repositorios.ClienteRepoImpl;
 import org.cplcursos.java.Repositorios.Repo;
-import org.cplcursos.java.modelos.Cliente;
+import org.cplcursos.java.Entidades.Cliente;
 import org.cplcursos.java.util.JpaUtil;
 
 import javax.swing.*;
-import java.util.List;
 
 public class HibernateRepo {
     public static void main(String[] args) {

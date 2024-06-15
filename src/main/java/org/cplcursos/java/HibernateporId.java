@@ -1,9 +1,8 @@
 package org.cplcursos.java;
 
 import jakarta.persistence.EntityManager;
-import org.cplcursos.java.modelos.Cliente;
+import org.cplcursos.java.Entidades.Cliente;
 import org.cplcursos.java.util.JpaUtil;
-import org.w3c.dom.ls.LSOutput;
 
 import java.util.Scanner;
 

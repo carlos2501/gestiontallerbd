@@ -1,8 +1,7 @@
-package org.cplcursos.java.modelos;
+package org.cplcursos.java.Entidades;
 
 import jakarta.persistence.*;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
