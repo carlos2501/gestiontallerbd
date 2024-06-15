@@ -50,13 +50,16 @@ public class Cliente {
         System.out.println("Antes del persist");
     }
 
+    @OneToMany
+
     @PostPersist
     public void postPersist() {
-        System.out.println("Después del persist");
-    }
+        System.out.println("Después del persist");}
 
     @PreUpdate
     public void preMerge() {
         this.ultimaModificacion = LocalDateTime.now();
     }
+
+
 }
