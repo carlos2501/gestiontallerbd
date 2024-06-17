@@ -27,6 +27,18 @@ public class Proveedor {
         inverseJoinColumns={@JoinColumn(name="id_pieza")})
     private Set<Pieza> piezas = new HashSet<>();
 
+    // Helpers
+    public void nuevaPieza(Pieza pz) {
+        this.piezas.add(pz);
+        pz.getProveedores().add(this);
+    }
+
+    public void eliminarPieza(Pieza pz){
+        this.piezas.remove(pz);
+        pz.getProveedores().remove(this);
+    }
+
+    // Auxiliares
     @Override
     public String toString() {
         return "Proveedor{" +

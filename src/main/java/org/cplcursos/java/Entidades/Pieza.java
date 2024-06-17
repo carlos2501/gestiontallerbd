@@ -5,6 +5,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.HashSet;
+import java.util.Set;
+
 @Entity
 @Getter
 @Setter
@@ -18,6 +21,9 @@ public class Pieza {
 
     private String codigo;
     private String nombre;
+
+    @ManyToMany(mappedBy = "piezas")
+    private Set<Proveedor> proveedores = new HashSet<>();
 
     public Pieza(String codigo, String nombre){
         this.codigo = codigo;
