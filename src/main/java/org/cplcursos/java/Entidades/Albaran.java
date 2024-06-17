@@ -13,7 +13,7 @@ import java.time.LocalDateTime;
 @Getter
 @Setter
 @NoArgsConstructor
-@ToString
+//@ToString
 public class Albaran {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -41,4 +41,13 @@ public class Albaran {
    @JoinColumn(name = "id_cliente")
    private Cliente cliente;
 
+    @Override
+    public String toString() {
+        return "Albaran{" +
+                "cliente=" + cliente.getNombre() +
+                ", id=" + id +
+                ", fecha=" + fecha +
+                ", importe=" + importe +
+                '}';
+    }
 }

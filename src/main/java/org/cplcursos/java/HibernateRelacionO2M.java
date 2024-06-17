@@ -40,6 +40,14 @@ public class HibernateRelacionO2M {
         Cita cita2 = new Cita(LocalDateTime.now());
         cita1.setCliente(cli);
         cita2.setCliente(cli);
+        // Creamos albaranes, les asignaos el cliente y  asignamos el nuevo albarán a los albaranes del cliente
+        Albaran alb1 = new Albaran();
+        alb1.setFecha(LocalDateTime.now());
+        alb1.setImporte(123.34F);
+        alb1.setCliente(cli);
+        srvcapp.guardarAlb(alb1);
+        cli.getAlbaranes().add(alb1);
+
         // Las asignamos al cliente
         cli.getCitas().add(cita1);
         srvcapp.guardarCita(cita1);
@@ -50,6 +58,11 @@ public class HibernateRelacionO2M {
         System.out.println(srvcapp.porId(3).get());
         System.out.println("------------------ Buscamos la cita con id=1 --------------");
         System.out.println(srvcapp.porIdCita(1).get());
+        System.out.println("------------------ Borramos el cliente para el que hemos asignado las citas --------------");
+        srvcapp.eliminar(cli.getId());
+        // listamos las citas
+        srvcapp.listaCitas();
+
         // Cerramos el em
         em.close();
 

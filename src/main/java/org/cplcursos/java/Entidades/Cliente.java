@@ -53,10 +53,10 @@ public class Cliente {
          propiedad que representa el conjunto -en este caso, como un List<>- de instancias de Albaran.
 
      */
-    @OneToMany(mappedBy = "cliente")
+    @OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL)
     private List<Albaran> albaranes;
 
-    @OneToMany(mappedBy = "cliente")
+    @OneToMany(mappedBy = "cliente", cascade = CascadeType.DETACH, orphanRemoval = false)
     private List<Cita> citas;
 
     // Constructores
@@ -74,5 +74,19 @@ public class Cliente {
         this.ultimaModificacion = LocalDateTime.now();
     }
 
-
+    @Override
+    public String toString() {
+        return "Cliente{" +
+                "albaranes=" + albaranes +
+                ", id=" + id +
+                ", nombre='" + nombre + '\'' +
+                ", direccion='" + direccion + '\'' +
+                ", dni='" + dni + '\'' +
+                ", edad=" + edad +
+                ", emilio='" + emilio + '\'' +
+                ", creadoEl=" + creadoEl +
+                ", ultimaModificacion=" + ultimaModificacion +
+                ", citas=" + citas +
+                '}';
+    }
 }

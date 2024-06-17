@@ -1,6 +1,7 @@
 package org.cplcursos.java.Repositorios;
 
 import jakarta.persistence.EntityManager;
+import org.cplcursos.java.Entidades.Albaran;
 import org.cplcursos.java.Entidades.Cita;
 
 import java.util.List;
@@ -14,7 +15,8 @@ public class CitaRepoImpl implements Repo<Cita>{
 
     @Override
     public List<Cita> listar(Integer num) {
-        return List.of();
+        return em.createQuery("SELECT c FROM Cita c", Cita.class)
+                .getResultList();
     }
 
     @Override

@@ -5,6 +5,8 @@
         <class>org.cplcursos.java.Entidades.Cliente</class>
         <class>org.cplcursos.java.Entidades.Albaran</class>
         <class>org.cplcursos.java.Entidades.Cita</class>
+        <class>org.cplcursos.java.Entidades.Pieza</class>
+        <class>org.cplcursos.java.Entidades.Proveedor</class>
         <exclude-unlisted-classes>true</exclude-unlisted-classes>
         <properties>
             <property name="jakarta.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
