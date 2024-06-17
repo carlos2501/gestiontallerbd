@@ -1,9 +1,12 @@
 package org.cplcursos.java;
 
 import jakarta.persistence.EntityManager;
+import org.cplcursos.java.Entidades.*;
 import org.cplcursos.java.Servicios.ServicioApp;
 import org.cplcursos.java.Servicios.ServicioAppImpl;
 import org.cplcursos.java.util.JpaUtil;
+
+import java.security.cert.PolicyNode;
 
 public class HibernateRelacionO2M {
     public static void main(String[] args) {
@@ -29,5 +32,10 @@ public class HibernateRelacionO2M {
             cada registro que se crea en la tabla "albaranes"
          */
         System.out.println("------------------ Listar los albaranes de un cliente --------------");
+        System.out.println(srvcapp.porId(6).get());
+
+
+
+
     }
 }
