@@ -6,7 +6,7 @@ import org.cplcursos.java.Servicios.ServicioApp;
 import org.cplcursos.java.Servicios.ServicioAppImpl;
 import org.cplcursos.java.util.JpaUtil;
 
-import java.security.cert.PolicyNode;
+import java.time.LocalDateTime;
 
 public class HibernateRelacionO2M {
     public static void main(String[] args) {
@@ -31,8 +31,28 @@ public class HibernateRelacionO2M {
             Esta relación crea una tabla auxiliar que contiene un registro con el id de Cliente y el id de Albaran para
             cada registro que se crea en la tabla "albaranes"
          */
-        System.out.println("------------------ Listar los albaranes de un cliente --------------");
-        System.out.println(srvcapp.porId(6).get());
+        System.out.println("------------------ Listar las citas de un cliente --------------");
+
+        // Elegimos el cliente al que le vamos a asignar las citas
+        Cliente cli = em.find(Cliente.class, 3);
+        // Creamos las citas
+        Cita cita1 = new Cita(LocalDateTime.now());
+        Cita cita2 = new Cita(LocalDateTime.now());
+        cita1.setCliente(cli);
+        cita2.setCliente(cli);
+        // Las asignamos al cliente
+        cli.getCitas().add(cita1);
+        srvcapp.guardarCita(cita1);
+        cli.getCitas().add(cita2);
+        srvcapp.guardarCita(cita2);
+        srvcapp.guardar(cli);
+
+        System.out.println(srvcapp.porId(3).get());
+        System.out.println("------------------ Buscamos la cita con id=1 --------------");
+        System.out.println(srvcapp.porIdCita(1).get());
+        // Cerramos el em
+        em.close();
+
 
 
 

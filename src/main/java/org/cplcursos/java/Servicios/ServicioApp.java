@@ -1,6 +1,7 @@
 package org.cplcursos.java.Servicios;
 
 import org.cplcursos.java.Entidades.Albaran;
+import org.cplcursos.java.Entidades.Cita;
 import org.cplcursos.java.Entidades.Cliente;
 
 import java.util.List;
@@ -16,4 +17,7 @@ public interface ServicioApp {
     Optional<Albaran> porIdAlbaran(Integer id);
     void guardarAlb(Albaran cli);
     void eliminarAlb(Integer id);
+
+    Optional<Cita> porIdCita(Integer id);
+    void guardarCita(Cita cita);
 }

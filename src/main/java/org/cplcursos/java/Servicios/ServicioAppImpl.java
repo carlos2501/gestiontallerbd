@@ -2,8 +2,10 @@ package org.cplcursos.java.Servicios;
 
 import jakarta.persistence.EntityManager;
 import org.cplcursos.java.Entidades.Albaran;
+import org.cplcursos.java.Entidades.Cita;
 import org.cplcursos.java.Entidades.Cliente;
 import org.cplcursos.java.Repositorios.AlabranRepoImpl;
+import org.cplcursos.java.Repositorios.CitaRepoImpl;
 import org.cplcursos.java.Repositorios.ClienteRepoImpl;
 import org.cplcursos.java.Repositorios.Repo;
 
@@ -13,10 +15,12 @@ import java.util.Optional;
 public class ServicioAppImpl implements ServicioApp{
     private Repo<Cliente> repoCli;
     private Repo<Albaran> repoAlb;
+    private Repo<Cita> repoCita;
 
     public ServicioAppImpl(EntityManager em) {
         this.repoCli = new ClienteRepoImpl(em);
         this.repoAlb = new AlabranRepoImpl(em);
+        this.repoCita = new CitaRepoImpl(em);
     }
 
     @Override
@@ -57,5 +61,15 @@ public class ServicioAppImpl implements ServicioApp{
     @Override
     public void eliminarAlb(Integer id) {
         repoAlb.eliminar(id);
+    }
+
+    @Override
+    public Optional<Cita> porIdCita(Integer id) {
+        return Optional.ofNullable(repoCita.porId(id));
+    }
+
+    @Override
+    public void guardarCita(Cita cita) {
+        repoCita.guardar(cita);
     }
 }

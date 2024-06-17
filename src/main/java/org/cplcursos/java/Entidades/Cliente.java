@@ -2,18 +2,18 @@ package org.cplcursos.java.Entidades;
 
 import jakarta.persistence.*;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
 @Table(name="clientes")
 @Getter
 @Setter
-@NoArgsConstructor
+//@NoArgsConstructor
 @ToString
 public class Cliente {
     @Id
@@ -56,7 +56,13 @@ public class Cliente {
     @OneToMany(mappedBy = "cliente")
     private List<Albaran> albaranes;
 
+    @OneToMany(mappedBy = "cliente")
     private List<Cita> citas;
+
+    // Constructores
+    public Cliente() {
+        this.citas = new ArrayList<>();
+    }
 
     @PrePersist
     public void prePersist() {
